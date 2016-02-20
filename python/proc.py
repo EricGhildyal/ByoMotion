@@ -35,8 +35,21 @@ def checkRangeWristTwist(myoWristTwist):
 
     return inRange
 
-## def checkRangeLeftRight(myoUpDown, myoWristTwist):
+# Returns boolean true if arm is outward (i.e. armIsOutward == true)
+def checkRangeInwardOutward(myoUpDown, myoWristTwist):
+    upDownMaxRange = 90
+    upDownMinRange = -90
 
+    wristMaxRange = 80 # twist outward
+    wristMinRange = -80 # twist inward
+
+    if checkRangeShoulderUpDown(myoUpDown) == true and myoWristTwist > 0 and myoWristTwist <= wristMaxRange:
+        armIsOutward = true
+
+    if checkRangeShoulderUpDown(myoUpDown) == true and myoWristTwist < 0 and myoWristTwist >= wristMinRange:
+        armIsOutward = false
+
+    return armIsOutward
 
 def main():
     data = procFile("data.txt")
