@@ -23,55 +23,30 @@ def procFile(fileNm):
     procData("pitch", line[2], line[3])
     procData("yaw", line[4], line[5])
 
-#atus being how much user has left to reach average human movement.
-# def getUserStatusUpDown(myoUpDown):
-#     maxRange = 90
-#     minRange = -120
-#
-#     if myoUpDown < 0:
-#         userStatus = minRange + myoUpDown
-#     elif myoUpDown > 0:
-#         userStatus = maxRange - myoUpDown
-#
-#     return userStatus
-#
-# def checkRangeWristTwist(myoWristTwist):
-#     maxRange = 80
-#     minRange = -80
-#
-#     if (myoWristTwist < maxRange and myoWristTwist > minRange):
-#         inRange = true
-#     else:
-#         inRange = false
-#
-#     return inRange
-#
-# def getUserStatusTwist(myoWristTwist):
-#     maxRange = 80
-#     minRange = -80
-#
-#     if (myoWristTwist < 0):
-#         userStatus = minRange + myoWristTwist
-#     elif (myoWristTwist > 0):
-#         userStatus = maxRange - myoWristTwist
-#
-#     return userStatus
-#
-# # Returns boolean true if arm is outward (i.e. armIsOutward == true)
-# def checkRangeInwardOutward(myoUpDown, myoWristTwist):
-#     upDownMaxRange = 90
-#     upDownMinRange = -90
-#
-#     wristMaxRange = 80 # twist outward
-#     wristMinRange = -80 # twist inward
-#
-#     if (checkRangeShoulderUpDown(myoUpDown) == true and myoWristTwist > 0 and myoWristTwist <= wristMaxRange):
-#         armIsOutward = true
-#
-#     if (checkRangeShoulderUpDown(myoUpDown) == true and myoWristTwist < 0 and myoWristTwist >= wristMinRange):
-#         armIsOutward = false
-#
-#     return armIsOutward
-#
-# def getUserStatusInwardOutward(myoUpDown, myoWristTwist):
-#     if armIsLeft = checkRangeInwardOutward(myoUpDown, myoWristTwist) == true:
+#status being how much user has left to reach average human movement.
+def getUserStatusUpDown(myoUpDown):
+    maxRange = 17
+    minRange = 0
+
+	if (myoUpDown <= maxRange and myoUpDown >= minRange):
+		userStatus = maxRange - myoUpDown
+
+    return userStatus
+
+def getUserStatusRoll(myoRoll):
+    maxRange = 12
+    minRange = 0
+
+	if (myoRoll <= maxRange and myoRoll >= minRange):
+    	userStatus = maxRange - myoRoll
+
+    return userStatus
+
+def getUserStatusYaw(myoYaw):
+	maxRange = 17
+	minRange = 0
+
+	if (myYaw <= maxRange and myoRoll >= minRange):
+		userStatus = maxRange - myoYaw
+
+	return userStatus
