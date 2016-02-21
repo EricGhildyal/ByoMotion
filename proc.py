@@ -1,17 +1,12 @@
 import json
 
 #take file, make array of each timestamped (line number) data value
-def procFile(fileNm):
-    data = []
-    f = open(fileNm, 'r') #file *should be* created and filled
-    #split the line up
-    for line in f:
-        data += line.strip('\n').split(',')
+def procFile(data):
     #setup for data being sent in, 1 index gap between sets of numbers
-
+    data = data.strip('\n').split(',')
     offsetR = procData("roll", data[0])
-    offsetP = procData("pitch", data[3])
-    offsetY = procData("yaw", data[6])
+    offsetP = procData("pitch", data[1])
+    offsetY = procData("yaw", data[2])
 
     return [offsetR, offsetP, offsetY]
 

@@ -3,21 +3,20 @@ import pygal
 def displayGraph(input):
     dates = input[0]
     data = input[1]
-
     rolls = []
-    for i in range(len(data)):
-        rolls.append(data[i][0])
+    l = len(data)
+    for i in range(0,l):
+        rolls.append(int(data[i][0]))
 
     pitches = []
-    for i in range(len(data)):
-        pitches.append(data[i][1])
+    for i in range(0,l):
+        pitches.append(int(data[i][1]))
 
     yaws = []
-    for i in range(len(data)):
-        yaws.append(data[i][2])
+    for i in range(0,l):
+        yaws.append(int(data[i][2]))
 
     line_chart = pygal.Line()
-
 
     line_chart.add("Roll", rolls)
     line_chart.add("Pitch", pitches)
