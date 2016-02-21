@@ -15,7 +15,7 @@ def procFile(fileNm):
 
 def checkRangeShoulderUpDown(myoUpDown):
     maxRange = 90
-    minRange = -90
+    minRange = -120
 
     if myoUpDown < maxRange and myoUpDown > minRange:
         inRange = true
@@ -24,16 +24,39 @@ def checkRangeShoulderUpDown(myoUpDown):
 
     return inRange
 
+# status being how much user has left to reach average human movement.
+def getUserStatusUpDown(myoUpDown):
+    maxRange = 90
+    minRange = -120
+
+    if (myoUpDown < 0):
+        userStatus = minRange + myoUpDown
+    else if (myoUpDown > 0):
+        userStatus = maxRange - myoUpDown
+
+    return userStatus
+
 def checkRangeWristTwist(myoWristTwist):
     maxRange = 80
     minRange = -80
 
-    if myoWristTwist < maxRange and myoWristTwist > minRange:
+    if (myoWristTwist < maxRange and myoWristTwist > minRange):
         inRange = true
     else:
         inRange = false
 
     return inRange
+
+def getUserStatusTwist(myoWristTwist):
+    maxRange = 80
+    minRange = -80
+
+    if (myoWristTwist < 0):
+        userStatus = minRange + myoWristTwist
+    else if (myoWristTwist > 0):
+        userStatus = maxRange - myoWristTwist
+
+    return userStatus
 
 # Returns boolean true if arm is outward (i.e. armIsOutward == true)
 def checkRangeInwardOutward(myoUpDown, myoWristTwist):
@@ -43,10 +66,14 @@ def checkRangeInwardOutward(myoUpDown, myoWristTwist):
     wristMaxRange = 80 # twist outward
     wristMinRange = -80 # twist inward
 
-    if checkRangeShoulderUpDown(myoUpDown) == true and myoWristTwist > 0 and myoWristTwist <= wristMaxRange:
+    if (checkRangeShoulderUpDown(myoUpDown) == true and myoWristTwist > 0 and myoWristTwist <= wristMaxRange):
         armIsOutward = true
 
-    if checkRangeShoulderUpDown(myoUpDown) == true and myoWristTwist < 0 and myoWristTwist >= wristMinRange:
+    if (checkRangeShoulderUpDown(myoUpDown) == true and myoWristTwist < 0 and myoWristTwist >= wristMinRange):
         armIsOutward = false
 
     return armIsOutward
+
+def getUserStatusInwardOutward(myoUpDown, myoWristTwist):
+    if armIsLeft = checkRangeInwardOutward(myoUpDown, myoWristTwist) == true:
+        
