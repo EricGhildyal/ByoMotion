@@ -1,16 +1,16 @@
 import json
 name = ""
 
+#Process data
 def procData(data):
-    for el in data: #split by readings
-        print(el.strip('\n').split(',')) #get separated data
+    
 
 #take file, make array of each timestamped (line number) data value
 def procFile(fileNm):
     data = []
-    f = open("datafiles/" + fileNm, 'a+')
+    f = open("datafiles/" + fileNm, 'r') #file *should be* created and filled
     for line in f:
-        data.append(line)
+        data.append(line.strip('\n').split(','))
     procData(data)
 
 def checkRangeShoulderUpDown(myoUpDown):

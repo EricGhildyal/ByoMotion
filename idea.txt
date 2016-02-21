@@ -1,0 +1,4 @@
+collect values
+store in an array
+get rid of values that we don't care about
+print max or min values to a .json file

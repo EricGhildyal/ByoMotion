@@ -6,9 +6,9 @@ def intro():
     print("============================ WELCOME TO ByoMotion ============================")
     name = raw_input("What is your name?")
     print "Hello", name, "Please follow the on screen commands:"
-    print "Your file will be named: ", name,"-data.txt"
+    print "Your file will be named: ", name,"-data.json"
     print "Please follow the on screen prompts:"
-    return name + "-data.txt"
+    return name + "-data.json"
 
 def main():
     fileNm = intro()

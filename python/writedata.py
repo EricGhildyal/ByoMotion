@@ -1,8 +1,7 @@
 import json
 
+data=[]
 
-def main():
-    print('no')
-
-if __name__ == '__main__':
-    main()
+def write(data, fileNm):
+    f = open("datafiles/" + fileNm, 'a+')
+    f.write(data)
