@@ -1,6 +1,12 @@
 import proc
 import writedata
-#import readdata
+import subprocess
+
+fileNm = ""
+
+def getData():
+    cmd = "read.exe"
+    subprocess.call(cmd, stdin=None, stdout=None, stderr=None, shell=False)
 
 def intro():
     print("============================ WELCOME TO ByoMotion ============================")
@@ -11,8 +17,10 @@ def intro():
     return name + "-data.json"
 
 def main():
-    fileNm = intro()
-    proc.procFile(fileNm)
+    #fileNm = intro()
+    #getData()
+    proc.procFile("data.txt")
+
 
 if __name__ == '__main__':
     main()
