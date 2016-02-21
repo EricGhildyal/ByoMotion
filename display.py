@@ -1,9 +1,8 @@
 import pygal
 
-dates = ["2016-07-13 12:45:12", "2016-07-14 09:14:36"]
-data = [[12,9,2],[4,3,7],[2,5,8]]
-
-def displayGraph():
+def displayGraph(input):
+    dates = input[0]
+    data = input[1]
 
     rolls = []
     for i in range(len(data)):
