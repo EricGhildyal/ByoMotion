@@ -1,9 +1,8 @@
 # ByoMotion
-Use a MYO arm band to help patients recovering from arm injuries and ailments.
-Developed for Steelhacks 2016.
+ByoMotion uses Myo from Thalmic Labs to track the range of motion of Physical Therapy patients, plotting their score (compared to full range of motion) as a function of time.
 
 #Reason
-To track the progress of patients recovering from arm injuries and ailments. Data is processed and displayed.
+ To both keep patients motivated and confident that they are recovering and to let doctors know of their progress in real time.
 
 #Technologies
 C++, MYO Armband, Python.
